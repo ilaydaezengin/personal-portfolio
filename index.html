@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilayda's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            overflow: hidden;
+        }
+        /* Side Navigation Bar */
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 240px; /* Increased width */
+            background-color: #A8D5BA;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 20px 0;
+            font-size: 16px; /* Adjust font size for better readability */
+            text-align: center; /* Center-align text */
+            padding: 10px; /* Add padding for clickable area */
+            width: 100%; /* Stretch link to full width for better usability */
+            border-radius: 8px; /* Optional: Add rounded corners for links */
+        }
+        nav a:hover {
+            background-color: #167743; /* Add a hover effect */
+            color: #78d696;
+        }
+        nav .active {
+            background-color: #0c6738; /* Highlight active link */
+            color: #88D9A1;
+            font-weight: bold; /* Optional: Make active link bold */
+        }
+
+        /* Section Styling */
+        .sections-container {
+            margin-left: 240px;
+            height: 100vh;
+            width: calc(100% - 240px);
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+        }
+        section {
+            scroll-snap-align: start;
+            height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #about-section {
+            background-color: rgb(255, 255, 255);
+        }
+        #projects-section {
+            background-color: #e8f6f3;
+        }
+        #skills-section {
+            background-color: #eef1f5;
+        }
+        #leave-message-section {
+            background-color: #f2f4f7;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+            text-align: center;
+            max-width: 600px;
+        }
+        .divider {
+            height: 2px;
+            background: #ccc;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Adjusting the size of the icons for tools & frameworks */
+        .skills-container i {
+            font-size: 36px; /* Smaller size for icons */
+            margin: 10px;
+            color: #3d3d3d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Side Navigation -->
+    <nav id="sidebar">
+        <a href="#about-section" class="active">About</a>
+        <a href="#projects-section">Projects</a>
+        <a href="#skills-section">Skills</a>
+        <a href="#leave-message-section">Message</a>
+    </nav>
+
+    <!-- Content Sections -->
+    <div class="sections-container">
+        <section id="about-section">
+            <div class="headshot">
+                <img src="images/Ilayda.png" alt="Profile Picture" class="profile-picture">
+            </div>
+            <h2>Hello World, I'm Ilayda!</h2>
+            <p>
+                I am deeply passionate about data science, NLP, chatbots, and GenAI. 
+                With a background in computer science and a creative mindset, I love building systems that solve real-world problems 
+                while pushing the boundaries of innovation.
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ilayda-ezgi-zengin-b71b5ab3/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ilaydaezengin" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:zenginilaydaezgi@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+       <!-- Container for all projects -->
+       <section id="projects-section">
+<div class="grid-container">
+  
+    <!-- Card 1: Radiology Language Model -->
+    <div class="project-card group">
+      <div class="project-inner">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Radiology Language Model</h3>
+        <p class="text-gray-600 mb-6">
+          A contrastive pre-training approach for language model training in radiology reports. Leverages the semi-structured format of reports for effective learning.
+        </p>
+        <a href="https://github.com/ilaydaezengin/Master-Thesis" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  
+    <!-- Card 2: Basic Neural Network -->
+    <div class="project-card group">
+      <div class="project-inner">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Basic Neural Network</h3>
+        <p class="text-gray-600 mb-6">
+          Implemented a basic neural network without using any framework. The project performs image classification on the CIFAR dataset.
+        </p>
+        <a href="https://github.com/ilaydaezengin/NeuralNetwork" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  
+    <!-- Card 3: ResNet Model Implementation -->
+    <div class="project-card group">
+      <div class="project-inner">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">ResNet Model Implementation</h3>
+        <p class="text-gray-600 mb-6">
+          Implementation of the ResNet model using TensorFlow. A deep learning project designed to demonstrate the ResNet architecture for image classification.
+        </p>
+        <a href="https://github.com/ilaydaezengin/Resnet" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  
+    <!-- Card 4: Gender Bias Detection Model -->
+    <div class="project-card group">
+      <div class="project-inner">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Gender Bias Detection Model</h3>
+        <p class="text-gray-600 mb-6">
+          A model designed to detect gender bias in text data. This project leverages natural language processing techniques to analyze and identify biased language patterns.
+        </p>
+        <a href="https://github.com/ilaydaezengin/Gender-Bias-Detector" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  
+    <!-- Card 5: Human-in-the-Loop NLP Systems -->
+    <div class="project-card group">
+      <div class="project-inner">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Human-in-the-Loop NLP Systems</h3>
+        <p class="text-gray-600 mb-6">
+          A project to improve NLP models by incorporating human-in-the-loop systems. This was part of the Practical NLP course under the Social Computing Lab at TUM.
+        </p>
+        <a href="https://github.com/ilaydaezengin/NLP-Lab" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  
+    <!-- Card 6: GBDP Graph-Based Dependency Parser -->
+    <div class="project-card group">
+      <div class="project-inner">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">GBDP Graph-Based Dependency Parser</h3>
+        <p class="text-gray-600 mb-6">
+          A parser that identifies relations between words using graph-based algorithms. It consists of two parts: encoder and decoder. The final output is a graph with arcs between words and labels on them.
+        </p>
+        <a href="https://github.com/ilaydaezengin/GBDP" target="_blank" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  
+  </div>
+  
+  
+  
+          </section>
+          
+              
+              
+          
+        <section id="skills-section">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <!-- Data Science Tools -->
+                <h3>Languages & Frameworks</h3>
+                <div>
+                    <i class="fa-brands fa-python" title="Python"></i>
+                    <i class="fa-brands fa-java" title="Java"></i>
+                    <i class="fa-brands fa-swift" title="Swift"></i>
+                    <i class="fa-brands fa-figma" title="Figma"></i>
+                    <i class="fa-brands fa-git-alt" title="Git"></i>
+                    <i class="fa-brands fa-github-alt" title="GitHub"></i>
+                    <i class="fa-solid fa-database" title="Database"></i>
+                    <i class="devicon-r-plain" title="R"></i>
+                    <i class="devicon-c-plain-wordmark" title="C"></i>
+                </div>
+                <h3>Data Science Tools</h3>
+                <ul>
+                    <li>NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn, TensorFlow, PyTorch (Machine Learning & AI)</li>
+                    <li>SQL (Database Management)</li>
+                    <li>Tableau, Power BI, Excel (Data Visualization)</li>
+                    <li>AWS, Azure, Databricks (Cloud Platforms)</li>
+                </ul>
+            </div>
+        </section>
+        <section id="leave-message-section">
+          <h2>Chat with my Chatbot!</h2>
+          <div id="chat-container">
+              <div id="chat-box"></div>
+              <input type="text" id="user-input" placeholder="Type your message..." />
+              <button onclick="sendMessage()">Send</button>
+              <p id="chat-response"></p>
+          </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+  
+</body>
+</html>

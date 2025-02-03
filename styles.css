@@ -1,0 +1,354 @@
+/* Apply Inter font globally */
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-y: auto; /* Ensure vertical scrolling is enabled */
+}
+
+/* Optional: Custom hover effects for links */
+a:hover {
+    color: #ff7043; /* Highlight color */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Scroll behavior */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* Adjust based on nav height */
+}
+
+/* Section Styling */
+section {
+    scroll-snap-align: start; /* Ensures the section snaps to the top */
+    min-height: 100vh; /* Ensures each section takes up full viewport height */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Section Heading Styling */
+section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #bfd6c4;
+    margin-top: 1rem;
+    border-radius: 2px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    /* Adjust padding for sections */
+    section {
+        padding: 6rem 1rem;
+    }
+
+    /* Sidebar Navigation for small screens */
+    nav {
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .ml-64 {
+        margin-left: 0 !important;
+    }
+}
+
+
+/* Profile Image Hover Effect */
+.profile-picture {
+    display: block;
+    margin: -100px; 
+    width: 500px; /* Adjust to desired size */
+    height: 500px;
+    border-radius: 100%;  /* To make the image round */
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition */
+}
+
+/* Projects Grid Container */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Project Card Styling */
+.project-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    flex-basis: 180px; /* Fixed width for each card */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures the button stays at the bottom */
+    min-height: 280px; /* Minimum height for cards */
+    position: relative;
+    overflow: hidden; /* Hide overflow to keep the button hidden by default */
+}
+
+/* Title and description */
+.project-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* GitHub Button Styling */
+.project-card .btn {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    position: absolute;
+    bottom: 20px; /* Position at the bottom of the card */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; /* Make the button invisible initially */
+    visibility: hidden; /* Ensure it's hidden in the layout */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+/* Show the button when hovering */
+.project-card:hover .btn {
+    opacity: 1; /* Make the button visible */
+    visibility: visible; /* Ensure it's visible */
+}
+
+/* Hover Effect on Cards */
+.project-card:hover {
+    transform: translateY(-5px); /* Slight elevation on hover */
+}
+
+/* Projects Grid Container */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Ensure cards are responsive */
+.project-card {
+    max-width: 250px; /* Ensures that each card has a maximum width */
+}
+
+/* Make sure cards stack in mobile view */
+@media (max-width: 768px) {
+    .grid-container {
+        justify-content: center; /* Center cards for smaller screens */
+    }
+}
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Side Navigation Bar */
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    background-color: #A8D5BA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #167743;
+    color: #78d696;
+}
+
+nav .active {
+    background-color: #0c6738;
+    color: #88D9A1;
+    font-weight: bold;
+}
+
+/* Section Styling */
+.sections-container {
+    margin-left: 240px;
+    height: 100vh;
+    width: calc(100% - 240px);
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chat Section */
+#leave-message-section {
+    background-color: #f2f4f7;
+    padding: 40px;
+}
+
+#chat-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#chat-box {
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#user-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#user-input:focus {
+    border-color: #5d9bfb;
+}
+
+#send-btn {
+    padding: 12px 20px;
+    background-color: #5d9bfb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-btn:hover {
+    background-color: #4a83d4;
+}
+
+#send-btn:active {
+    transform: scale(0.98);
+}
+
+#send-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#send-btn {
+    align-self: flex-end;
+}
+
+/* Chat Messages Styling */
+.user-message {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    align-self: flex-start;
+}
+
+.ai-response {
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    align-self: flex-end;
+}
+
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+    
+.social-links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center; /* Centers icons */
+        gap: 25px; /* Increases spacing between icons */
+    }
+    
+    .social-links a {
+        font-size: 32px; /* Makes icons slightly larger */
+        color: #167743; /* Set all icons to the same green color */
+        transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
+    }
+    
+.social-links a:hover {
+        transform: scale(1.2); /* Adds a slight zoom effect on hover */
+        color: #0c6738; /* Slightly darker green on hover */
+    }
+    
